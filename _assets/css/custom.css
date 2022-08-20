@@ -1,0 +1,129 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #7f7f8a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.head-title {
+    font-family: "Rubik";
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #06163a;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 0.67em;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 0.6em;
+    margin-top: 1em;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 0.6em;
+    margin-top: 1.33em;
+}
+
+h5 {
+    font-size: 20px;
+    margin-bottom: 0.6em;
+    margin-top: 1.67em;
+}
+
+h6 {
+    font-size: 16px;
+    margin-bottom: 0.6em;
+    margin-top: 2.33em;
+}
+
+.m-title {
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 300;
+}
+
+
+
+.m-primary-color {
+    color: #ff5e14;
+}
+
+.m-primary-bg {
+    background-color: #ff5e14;
+}
+
+.m-secondary-color {
+    color: #06163a;
+}
+
+.m-secondary-bg {
+    background-color: #06163a;
+}
+
+.tertiary-color {
+    color: #e4eaf7;
+}
+
+.tertiary-bg {
+    background-color: #e4eaf7;
+}
+
+a {
+    color: #06163a;
+}
+
+a:hover,
+a:focus {
+    color: #ff5e14;
+    text-decoration: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.MuiInputLabel-root {
+    font-size: 0.97rem !important;
+}
+
+.MuiInputLabel-root.no-break {
+    white-space: break-spaces !important;
+}
+
+.MuiFormHelperText-root {
+    margin-left: 0px !important;
+}
