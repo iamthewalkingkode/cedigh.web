@@ -18,7 +18,7 @@
 <section class="mobex-section services-section-3 spage-2">
     <div class="container">
         <div class="row row_services_3">
-            <?php foreach($services as $srv): ?>
+            <?php foreach($__['services'] as $srv): ?>
             <div class="col-lg-12 col-md-12 col-sm-12 col-12 col-service-3">
                 <div class="wrap_service_3">
                     <div class="service-head-3">

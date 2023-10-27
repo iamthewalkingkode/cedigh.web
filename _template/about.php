@@ -93,7 +93,7 @@ We seek a country wherein all citizens have the capabilities to grasp the ever -
                         </div>
                         <div class="col-lg-8 col-md-12 col-12">
                             <div class="row">
-                                <?php foreach($partners as $part): ?>
+                                <?php foreach($__['partners'] as $part): ?>
                                 <div class="col-sm-6 text-center">
                                     <a target="_blank" href="<?php echo $part[2]; ?>">
                                         <img class="img-thumbnail" style="height: 55px;" src="<?php echo _WEB_.'img/partners/'.$part[0]; ?>" alt="<?php echo $part[1]; ?>" /> <br/>

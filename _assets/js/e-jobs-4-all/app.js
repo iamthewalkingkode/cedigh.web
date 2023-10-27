@@ -4,11 +4,15 @@ $(document).ready(function () {
   const App = () => {
     const [v, setValues] = React.useState({ first_name: '', last_name: '', middle_name: '' });
     const [step, setStep] = React.useState(0);
+    const [other, setOther] = React.useState('');
     const [error, setError] = React.useState([]);
     const [alert, setAlert] = React.useState({ msg: '', color: '' });
     const [submitting, setSubmitting] = React.useState(false);
 
     const changeValue = (e, multiline = false) => {
+      if (e.target.value.toLowerCase() === 'other') {
+        return setOther(e.target.name);
+      }
       if (typeof multiline === 'boolean' && multiline) {
         let vals = v[`${e.target.name}`] || [];
         if (vals.includes(e.target.value)) {
@@ -23,15 +27,17 @@ $(document).ready(function () {
     };
 
     React.useEffect(() => {
-      console.log(v);
-    }, [v]);
+      console.log(EJobs_Form_Json.flat().filter(ff => !['intro'].includes(ff.name)).map(ff => {
+        return ff.name
+      }));
+    }, []);
 
     const validate = () => {
       let form = EJobs_Form_Json[step];
       let valid = [];
       for (var f = 0; f <= form.length; f++) {
         let input = form[f] || {};
-        if (input.required && !v[form[f]]) {
+        if (input.required && !v[input.name]) {
           valid.push(input.name);
         }
       }
@@ -39,9 +45,16 @@ $(document).ready(function () {
     };
 
     const submit = () => {
+      let data = [];
+      for (var i = 0; i < Object.keys(v).length; i++) {
+        let name = Object.keys(v)[i];
+        let value = v[name];
+        let input = EJobs_Form_Json.flat().find(ef => ef.name === name);
+        data.push({ name, value, label: input.label, });
+      }
       setAlert((e) => ({ ...e, msg: '' }));
       setSubmitting(true);
-      axius.post('e_applicants', { ...v, case: 'insert', genesis: 'e_applicants', }).then((res) => {
+      axius.post('e_applicants', { data, case: 'insert', genesis: 'e_applicants', ...v, }).then((res) => {
         setSubmitting(false);
         console.log(res);
         if (res.status === 200) {
@@ -52,8 +65,8 @@ $(document).ready(function () {
         } else {
           swal.error(res.message);
           setAlert({ msg: res.message, color: 'error' });
-          window.scrollTo({ top: document.getElementById('Header')?.offsetHeight, behavior: 'smooth' });
         }
+        window.scrollTo({ top: document.getElementById('Header')?.offsetHeight, behavior: 'smooth' });
       });
     };
 
@@ -65,7 +78,7 @@ $(document).ready(function () {
       const isValid = validate();
       setError(isValid);
       if (isValid.length === 0) {
-        if (step === 3) {
+        if (step === 4) {
           submit();
         } else {
           setStep((preStep) => preStep + 1);
@@ -74,7 +87,7 @@ $(document).ready(function () {
       window.scrollTo({ top: document.getElementById(`Header`)?.offsetHeight, behavior: 'smooth' });
     };
 
-    const steps = ['Student Information', 'Info about Academic Institution', 'Info about idea', 'Thank You'];
+    const steps = ['Application details', 'Applicant Information', 'Info about Academic Institution', 'Info about idea', 'Thank You'];
 
     return (
       <React.Fragment>
@@ -98,13 +111,13 @@ $(document).ready(function () {
                 })}
               </Stepper>
 
-
               <div className="my-5">
                 <div className="row">
                   {EJobs_Form_Json[step].map(input => {
                     return (
                       <div key={input.name} id={`input_${input.name}`} className={`col-12 col-lg-${input.col || 6} mb-4`}>
-                        <InputLabel className="mb-2 no-break">{input.label}</InputLabel>
+                        {input.type !== 'break' && (<InputLabel className="mb-2 no-break">{input.label}</InputLabel>)}
+                        {input.type === 'break' && (<div dangerouslySetInnerHTML={{ __html: input.label }} />)}
                         <FormControl fullWidth error={error.includes(input.name)}>
                           {input.type === 'input' && (
                             <TextField
@@ -114,8 +127,9 @@ $(document).ready(function () {
                               error={error.includes(input.name)}
                               name={input.name}
                               value={v[input.name] || ''}
-                              label={input.label}
+                              placeholder={input.label}
                               onChange={changeValue}
+                              className="zws"
                               disabled={submitting}
                               helperText={error.includes(input.name) && 'This field is required'}
                             />
@@ -125,27 +139,28 @@ $(document).ready(function () {
                               required={input.required}
                               id={input.name}
                               error={error.includes(input.name)}
-                              label={input.label}
+                              placeholder={input.label}
                               name={input.name}
                               value={v[input.name] || ''}
                               multiline rows={5} maxLength={2}
                               onChange={changeValue}
+                              className="zws"
                               disabled={submitting}
                               helperText={error.includes(input.name) && 'This field is required'}
                             />
                           )}
                           {input.type === 'select' && (
                             <>
-                              <InputLabel>{input.label}</InputLabel>
+                              {/* <InputLabel>{input.label}</InputLabel> */}
                               <Select
                                 required={input.required}
                                 id={input.name}
                                 name={input.name}
                                 error={error.includes(input.name)}
-                                label={input.label}
                                 value={v[input.name] || ''}
                                 onChange={changeValue}
                                 disabled={submitting}
+                                className="zws"
                               >
                                 {input.options.items.map((option) => (
                                   <MenuItem key={`${input.name}-${option}`} value={option}>
@@ -160,9 +175,9 @@ $(document).ready(function () {
                           )}
                           {input.type === 'checkbox' && (
                             <>
-                              <div className="flex ml-4">
+                              <div className="ml-4s">
                                 {input.options.items.map((option) => (
-                                  <div key={option}>
+                                  <div className="float-left mr-2" key={option}>
                                     <FormControlLabel control={<Checkbox value={option} name={input.name} disabled={submitting} onChange={e => changeValue(e, true)} />} label={option} />
                                   </div>
                                 ))}
@@ -174,7 +189,7 @@ $(document).ready(function () {
                     )
                   })}
 
-                  {step === 3 && (
+                  {step === 4 && (
                     <div className="pl-3">
                       <b className="">Notice of Collection, Use and Disclosure of Personal Information</b>
                       <p>Personal information is collected under the authority of the CEDI, Queen's University DDQIC and Leadogo, as amended, and will be used for educational, administrative and statistical purposes.</p>
@@ -184,7 +199,6 @@ $(document).ready(function () {
                   )}
                 </div>
               </div>
-
 
               <Box sx={{ display: 'flex', flexDirection: 'row', pt: 1 }}>
                 <Button color="inherit" variant="contained" disabled={step === 0 || submitting} onClick={goBack} sx={{ mr: 1 }}>
@@ -199,6 +213,21 @@ $(document).ready(function () {
           </div>
           <div className="col-2"></div>
         </div>
+
+        <EJobs_FormOther
+          open={other ? true : false}
+          onSuccess={(e) => {
+            const key = EJobs_Form_Json[step][EJobs_Form_Json[step].indexOf(EJobs_Form_Json[step].find(e => e.name === other))];
+            const items = key.options.items;
+            items.push(`Other: ${e}`);
+            key['options']['items'] = items;
+            setValues((vv) => ({ ...vv, [other]: `Other: ${e}`, }));
+            setOther('');
+          }}
+          onCancel={() => {
+            setOther('');
+          }}
+        />
       </React.Fragment>
     );
   };

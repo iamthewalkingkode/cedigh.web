@@ -1,6 +1,18 @@
 const EJobs_Form_Json = [
     [
         {
+            name: 'intro',
+            label: `
+            <p>Thank you for your interest in the Entrepreneurship Jobs for All (E-Jobs4All) Fellowship program! The Entrepreneurship Jobs for All (E-Jobs4All) Fellowship gives you the confidence, resources, knowledge, network, and financial support to build a business with an impact. For Ghanaian SME's, students, unemployed and recent grads with a desire to solve pressing problems and bring entrepreneurial ideas to life or scale up their businesses, the program is split into three online courses where you will learn entrepreneurship, receive virtual coaching, develop your own business idea, and demonstrate your commitment in order to advance to the next course.</p>
+            <div>${__['programmes'][0][2].replace('<a href=\"./e-jobs-4-all\" class=\"btn btn-sm btn-dark\">Apply Now</a>', '')}</div>
+            `,
+            type: 'break',
+            col: 12,
+        },
+    ],
+
+    [
+        {
             name: 'first_name',
             label: 'First Name',
             type: 'input',
@@ -44,6 +56,15 @@ const EJobs_Form_Json = [
             type: 'input',
             options: {
                 type: 'number'
+            },
+            required: true,
+        },
+        {
+            name: 'social',
+            label: 'Please provide your LinkedIn or Facebook link',
+            type: 'input',
+            options: {
+                type: 'text'
             },
             required: true,
         },
@@ -145,18 +166,20 @@ const EJobs_Form_Json = [
             name: 'idea_stage',
             label: 'To date, how far along are you in the process of transforming your idea into a working solution? Choose one option below that best applies to you.',
             type: 'select',
+            col: 12,
             options: {
                 items: ['I just started thinking about entrepreneurship recently and therefore I have no idea yet', 'Idea stage', 'Solution development stage', 'Pilot stage', 'Commercialization stage', 'Profitable new venture looking to scale'],
             },
         },
-        {
-            name: 'idea_about',
-            label: 'What is the main idea you would like to develop into a business opportunity under this program? (50 words maximum)',
-            type: 'input',
-            options: {
-                type: 'text',
-            },
-        },
+        // {
+        //     name: 'idea_about',
+        //     label: 'What is the main idea you would like to develop into a business opportunity under this program? (50 words maximum)',
+        //     type: 'textarea',
+        //     col: 12,
+        //     options: {
+        //         type: 'text',
+        //     },
+        // },
         {
             name: 'idea_industry',
             label: 'In which industry would you categorize your business idea? Check all that apply',
@@ -186,11 +209,11 @@ const EJobs_Form_Json = [
         },
         {
             name: 'idea_validation',
-            label: 'Have you spoken with any potential customers/users to validate that your intended solution is desirable? If so, please explain. (50 words maximum)',
-            type: 'textarea',
+            label: 'Have you spoken with any potential customers/users to validate that your intended solution is desirable?',
+            type: 'select',
             col: 12,
             options: {
-                type: 'text'
+                items: ['Yes', 'No'],
             },
         },
         {
@@ -202,18 +225,18 @@ const EJobs_Form_Json = [
                 items: ['For-Profit', 'Not-For-Profit', 'Not Sure'],
             },
         },
-        {
-            name: 'idea_organisation_explained',
-            label: 'Please explain why you selected your answer above. ',
-            type: 'textarea',
-            col: 12,
-            options: {
-                type: 'text'
-            },
-        },
+        // {
+        //     name: 'idea_organisation_explained',
+        //     label: 'Please explain why you selected your answer above. ',
+        //     type: 'textarea',
+        //     col: 12,
+        //     options: {
+        //         type: 'text'
+        //     },
+        // },
         {
             name: 'idea_cost',
-            label: 'Have you thought about how much it will cost you to set up this venture? Please explain. (50 words maximum)',
+            label: 'How much will it cost to set or scale up this venture?',
             type: 'textarea',
             col: 12,
             options: {
@@ -222,7 +245,7 @@ const EJobs_Form_Json = [
         },
         {
             name: 'idea_partners',
-            label: 'Are there any potential stakeholders or partners you see helping you to make this venture a successful venture? Please explain. (50 words maximum)',
+            label: 'Who are your potential partners and competitors? (50 words maximum)',
             type: 'textarea',
             col: 12,
             options: {
@@ -239,31 +262,31 @@ const EJobs_Form_Json = [
         },
         {
             name: 'idea_challenges',
-            label: 'What top three challenges do you think you will have as you try to develop this venture? (50 words maximum)',
+            label: 'What challenges do you think you will have as you develop this venture? (50 words maximum)',
             type: 'textarea',
             col: 12,
             options: {
                 type: 'text'
             },
         },
-        {
-            name: 'idea_opportunities',
-            label: 'What top three opportunities do you think you will come across as you try to develop this new venture? (50 words maximum)',
-            type: 'textarea',
-            col: 12,
-            options: {
-                type: 'text'
-            },
-        },
-        {
-            name: 'idea_skills',
-            label: 'Please briefly explain the passions, strengths and skills you will bring to the program and why you wish to participate. (200 words maximum)',
-            type: 'textarea',
-            col: 12,
-            options: {
-                type: 'text'
-            },
-        },
+        // {
+        //     name: 'idea_opportunities',
+        //     label: 'What top three opportunities do you think you will come across as you try to develop this new venture? (50 words maximum)',
+        //     type: 'textarea',
+        //     col: 12,
+        //     options: {
+        //         type: 'text'
+        //     },
+        // },
+        // {
+        //     name: 'idea_skills',
+        //     label: 'Please briefly explain the passions, strengths and skills you will bring to the program and why you wish to participate. (200 words maximum)',
+        //     type: 'textarea',
+        //     col: 12,
+        //     options: {
+        //         type: 'text'
+        //     },
+        // },
         {
             name: 'idea_website',
             label: 'Please provide your business website if you have any',

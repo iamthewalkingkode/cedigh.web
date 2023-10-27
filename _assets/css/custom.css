@@ -117,7 +117,7 @@ input[type=number] {
 }
 
 .MuiInputLabel-root {
-    font-size: 0.97rem !important;
+    font-size: 0.9rem !important;
 }
 
 .MuiInputLabel-root.no-break {
@@ -126,4 +126,13 @@ input[type=number] {
 
 .MuiFormHelperText-root {
     margin-left: 0px !important;
+}
+
+.MuiFormControl-root.zws fieldset legend,
+.MuiInputBase-root.zws fieldset legend {
+    width: 0px !important;
+}
+
+.r_wrap_slider.r_wrap_slider_3::before {
+    opacity: 0.3 !important;
 }

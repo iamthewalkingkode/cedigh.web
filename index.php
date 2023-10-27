@@ -29,14 +29,19 @@
     <link rel="stylesheet" href="<?php echo _WEB_ . 'css/tp-animation.css'; ?>" media="all">
     <link rel="stylesheet" href="<?php echo _WEB_ . 'css/style.css'; ?>" media="all">
     <link rel="stylesheet" href="<?php echo _WEB_ . 'css/responsive.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/custom.css'; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/custom.css?v=' . $v; ?>" media="all">
 
     <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- React -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <?php if($config['root']){ ?>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <?php } else { ?>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <?php } ?>
     <!-- Tailwindcss -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2.2.7/dist/tailwind.min.css" /> -->
     <!-- mui -->
@@ -60,8 +65,8 @@
                     <div class="col-lg-2 col-md-12 col-12 col-logo">
                         <div class="tagpoint-wrap-logo ">
                             <a href="<?php echo WEB; ?>">
-                                <img src="<?php echo _WEB_ . 'img/logo.jpg'; ?>" alt="CEDI Ghana Logo" class="dark-logo">
-                                <img src="<?php echo _WEB_ . 'img/light-logo.png'; ?>" alt="CEDI Ghana Logo" class="light-logo">
+                                <img src="<?php echo _WEB_ . 'img/logo.png?v=' . $v; ?>" alt="CEDI Ghana Logo" class="dark-logo" style="height: 40px;" />
+                                <img src="<?php echo _WEB_ . 'img/light-logo.png?v=' . $v; ?>" alt="CEDI Ghana Logo" class="light-logo" style="height: 40px;" />
                             </a>
                             <span class="phone_menu ">
                                 <span class="m-f m-primary-bg"></span>
@@ -102,7 +107,7 @@
                                     <a href="<?php echo WEB . 'contact'; ?>">Contact Us</a>
                                 </li>
                                 <li class="m_wrap_phone">
-                                    <a href="tel:+233 54 301 3467">+233 54 301 3467</a>
+                                    <a href="tel:<?php echo $__['contact']['phone'][0]; ?>"><?php echo $__['contact']['phone'][0]; ?></a>
                                 </li>
                             </ul>
                         </nav>
@@ -127,7 +132,7 @@ if (file_exists($template) == true) {
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="wrap_footer_col">
-                        <img src="<?php echo _WEB_ . 'img/'; ?>light-logo.png" alt="CEDI Ghana" />
+                        <img src="<?php echo _WEB_ . 'img/light-logo.png?v=' . $v; ?>" alt="CEDI Ghana" style="height: 80px;" />
                         <p class="head-title">
                         Community and Entrepreneurial Development Initiative commonly called CEDI Ghana is a registered company limited by guarantee incorporated under Ghana’s Company Act, 1963 (Act 179)...
                         </p>
@@ -153,12 +158,12 @@ if (file_exists($template) == true) {
                 <div class="col-lg-5 col-md-12 col-sm-6 col-12">
                     <div class="wrap_footer_col our_address">
                         <h3 class="footer-title">Our Address</h3>
-                        <p class="head-title contact-address">P. O. Box KS 6486, Kumasi</p>
+                        <p class="head-title contact-address"><?php echo $__['contact']['address'][0]; ?></p>
                         <p class="contact_number head-title">
-                            <i class="fas fa-phone"></i> <a href="tel: +233 54 301 3467" class="contac_number m-primary-color">  +233 54 301 3467 </a>
+                            <i class="fas fa-phone"></i> <a href="tel: +233 20 520 2000" class="contac_number m-primary-color">  +233 20 520 2000 </a>
                         </p>
                         <p class="contact_email head-title">Email Us via :
-                            <i class="m-primary-color">info@cedighana.org</i>
+                            <i class="m-primary-color"><?php echo $__['contact']['email'][0]; ?></i>
                         </p>
                     </div>
                 </div>
@@ -175,6 +180,7 @@ if (file_exists($template) == true) {
     </footer>
     <script>
         const API = '<?php echo $config['api']; ?>';
+        const __ = <?php echo json_encode($__, 1); ?>;
     </script>
     <script src="<?php echo _WEB_ . 'js/jquery.min.js'; ?>"></script>
     <script src="<?php echo _WEB_ . 'js/owl.carousel.min.js'; ?>"></script>
@@ -186,10 +192,11 @@ if (file_exists($template) == true) {
     <script src="<?php echo _WEB_ . 'js/wow.min.js'; ?>"></script>
     <script src="<?php echo _WEB_ . 'js/index.js'; ?>"></script>
     <!-- scripts -->
-    <script src="<?php echo _WEB_ . 'js/axius.js?v=' . time(); ?>" type="text/javascript"></script>
-    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.json.js?v=' . time(); ?>" type="text/babel"></script>
-    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/theme.js?v=' . time(); ?>" type="text/babel"></script>
-    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/app.js?v=' . time(); ?>" type="text/babel"></script>
+    <script src="<?php echo _WEB_ . 'js/axius.js?v=' . $v; ?>" type="text/javascript"></script>
+    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.json.js?v=' . $v; ?>" type="text/babel"></script>
+    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/theme.js?v=' . $v; ?>" type="text/babel"></script>
+    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.other.js?v=' . $v; ?>" type="text/babel"></script>
+    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/app.js?v=' . $v; ?>" type="text/babel"></script>
 </body>
 
 

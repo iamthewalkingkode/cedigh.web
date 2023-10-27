@@ -22,7 +22,7 @@
                     <div class="head_contact">
                         <h3>Application Form</h3>
                     </div>
-                    <div class="wrap_contact_text">
+                    <!-- <div class="wrap_contact_text">
                         <p>
                             Thank you for your interest in the Entrepreneurship Jobs for All (E-Jobs4All) Fellowship
                             program! The Entrepreneurship Jobs for All (E-Jobs4All) Fellowship gives you the confidence,
@@ -33,7 +33,7 @@
                             coaching, develop your own business idea, and demonstrate your commitment in order to
                             advance to the next course.
                         </p>
-                    </div>
+                    </div> -->
                     <div id="e_jobs_4_all"></div>
                 </div>
             </div>

@@ -67,13 +67,13 @@
                             <h3>Address Info</h3>
                         </div>
                         <div class="wrap_contact_text">
-                            <p>CEDI GHANA <br> P. O. Box KS 6486, Kumasi</p>
+                            <p>CEDI GHANA <br> <?php echo $__['contact']['address'][0]; ?></p>
                         </div>
                         <div class="head_contact">
                             <h3>Phone & Email</h3>
                         </div>
                         <div class="wrap_contact_text">
-                            <p>Email: info@cedighana.org <br> Phone: +233 54 301 3467</p>
+                            <p>Email: <?php echo $__['contact']['email'][0]; ?> <br> Phone: +233 20 520 2000</p>
                         </div>
                     </div>
                 </div>
