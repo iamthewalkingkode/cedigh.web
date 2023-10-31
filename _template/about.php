@@ -111,7 +111,7 @@ We seek a country wherein all citizens have the capabilities to grasp the ever -
     </div>
 </section>
 
-<section class="mobex-section aboutus-section m-secondary-bg">
+<section class="mobex-section aboutus-section bg-2 m-secondary-bg">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-9 col-md-12 col-12 col-about-text">
@@ -122,7 +122,7 @@ We seek a country wherein all citizens have the capabilities to grasp the ever -
             </div>
             <div class="col-lg-3 col-md-12 col-12 col-about-carousel">
                 <div class="wrap_about_img">
-                    <a href="http://www.youtube.com/watch?v=Zu_IRj_fZnc" title="play video" class="intro_video rq-play-video">
+                    <a href="https://www.youtube.com/watch?v=5GCKAb2t7qM" title="play video" class="intro_video rq-play-video">
                         <span class="before-play"></span>
                         <span class="play-icon"><i class="fas fa-play m-primary-color"></i></span>
                         <span class="after-play"></span>
@@ -138,10 +138,16 @@ We seek a country wherein all citizens have the capabilities to grasp the ever -
         <div class="row">
             <div class="offset-lg-1 col-lg-10 offset-md-0 col-md-12 col-12">
                 <div class="row inner_features_row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom">
-                        <h2>Facebook Feed</h2>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/5GCKAb2t7qM?si=ePl3SACwIoUXaMkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div class="col-lg-8 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom" data-offest="80%" data-speed="600">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/G05kfTObmw8?si=ePl3SACwIoUXaMkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6RhshenMvmU?si=ePl3SACwIoUXaMkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom" data-offest="80%" data-speed="600">
                         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Fcedigha%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1882831155374670" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
                     

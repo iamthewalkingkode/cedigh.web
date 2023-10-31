@@ -1,4 +1,5 @@
-[
+<?php
+$partners = [
     [
         "melr.png",
         "Ministry of Employment and Labour Relations",
@@ -29,4 +30,4 @@
         "Anchora Technologies Ltd",
         "https://anchoratechs.com"
     ]
-]
+    ];

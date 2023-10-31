@@ -3,7 +3,15 @@ const EJobs_Form_Json = [
         {
             name: 'intro',
             label: `
-            <p>Thank you for your interest in the Entrepreneurship Jobs for All (E-Jobs4All) Fellowship program! The Entrepreneurship Jobs for All (E-Jobs4All) Fellowship gives you the confidence, resources, knowledge, network, and financial support to build a business with an impact. For Ghanaian SME's, students, unemployed and recent grads with a desire to solve pressing problems and bring entrepreneurial ideas to life or scale up their businesses, the program is split into three online courses where you will learn entrepreneurship, receive virtual coaching, develop your own business idea, and demonstrate your commitment in order to advance to the next course.</p>
+            <p>Thank you for your interest in the Entrepreneurship Jobs for All (E-Jobs4All) program! The Entrepreneurship Jobs for All (E-Jobs4All) program gives you the confidence, resources, knowledge, network, mentorship and financial support to build a business with an impact.  For Ghanaian SME’s, students, unemployed and recent graduates with a desire to solve pressing problems and bring entrepreneurial ideas to life or scale up their businesses, this program is for you. The program is split into three online courses where you will learn entrepreneurship, receive virtual coaching, develop your own business idea, and demonstrate your commitment in order to advance to the next course.</p>
+            <h6 class="mt-3"><i>Program Dates:</i></h6>
+            <div><b>Applications are due November 30, 2023, 11:59PM GMT.</b></div>
+
+            <div><b>Course 1 - Explore Entrepreneurship</b> January 2023 - March 2023</div>
+            <div><b>Course 2 - Ignite Entrepreneurship</b> April 2023 - June 2023</div>
+            <div><b>Course 3 - Launch Entrepreneurship</b> July 2023 - September 2023</div>
+            <p>&nbsp;</p>
+
             <div>${__['programmes'][0][2].replace('<a href=\"./e-jobs-4-all\" class=\"btn btn-sm btn-dark\">Apply Now</a>', '')}</div>
             `,
             type: 'break',
@@ -58,22 +66,22 @@ const EJobs_Form_Json = [
                 type: 'number'
             },
             required: true,
-        },
-        {
-            name: 'social',
-            label: 'Please provide your LinkedIn or Facebook link',
-            type: 'input',
-            options: {
-                type: 'text'
-            },
-            required: true,
-        },
+        },        
         {
             name: 'gender',
             label: 'Please select the gender that you identify with',
             type: 'select',
             options: {
                 items: ['Female', 'Male', 'Other', 'Prefer not to answer'],
+            },
+            required: true,
+        },
+        {
+            name: 'social',
+            label: 'Please provide any of your social media handle (If any)',
+            type: 'input',
+            options: {
+                type: 'text'
             },
             required: true,
         },
@@ -131,15 +139,15 @@ const EJobs_Form_Json = [
             },
             required: true,
         },
-        // {
-        //     name: 'university_website',
-        //     label: 'University\'s Website (if applicable) ',
-        //     type: 'input',
-        //     options: {
-        //         type: 'url',
-        //     },
-        //     required: true,
-        // },
+        {
+            name: 'university_website',
+            label: 'University\'s Website (if applicable) ',
+            type: 'input',
+            options: {
+                type: 'url',
+            },
+            required: true,
+        },
     ],
 
     [
@@ -171,15 +179,15 @@ const EJobs_Form_Json = [
                 items: ['I just started thinking about entrepreneurship recently and therefore I have no idea yet', 'Idea stage', 'Solution development stage', 'Pilot stage', 'Commercialization stage', 'Profitable new venture looking to scale'],
             },
         },
-        // {
-        //     name: 'idea_about',
-        //     label: 'What is the main idea you would like to develop into a business opportunity under this program? (50 words maximum)',
-        //     type: 'textarea',
-        //     col: 12,
-        //     options: {
-        //         type: 'text',
-        //     },
-        // },
+        {
+            name: 'idea_about',
+            label: 'What is the main idea you would like to develop into a business opportunity under this program? (50 words maximum)',
+            type: 'textarea',
+            col: 12,
+            options: {
+                type: 'text',
+            },
+        },
         {
             name: 'idea_industry',
             label: 'In which industry would you categorize your business idea? Check all that apply',
@@ -225,15 +233,15 @@ const EJobs_Form_Json = [
                 items: ['For-Profit', 'Not-For-Profit', 'Not Sure'],
             },
         },
-        // {
-        //     name: 'idea_organisation_explained',
-        //     label: 'Please explain why you selected your answer above. ',
-        //     type: 'textarea',
-        //     col: 12,
-        //     options: {
-        //         type: 'text'
-        //     },
-        // },
+        {
+            name: 'idea_organisation_explained',
+            label: 'Please explain why you selected your answer above.',
+            type: 'textarea',
+            col: 12,
+            options: {
+                type: 'text'
+            },
+        },
         {
             name: 'idea_cost',
             label: 'How much will it cost to set or scale up this venture?',
@@ -245,7 +253,7 @@ const EJobs_Form_Json = [
         },
         {
             name: 'idea_partners',
-            label: 'Who are your potential partners and competitors? (50 words maximum)',
+            label: 'Are there any potential stakeholders or partners you see helping you to make this venture a successful venture? Please explain. (50 words maximum)',
             type: 'textarea',
             col: 12,
             options: {
@@ -262,31 +270,31 @@ const EJobs_Form_Json = [
         },
         {
             name: 'idea_challenges',
-            label: 'What challenges do you think you will have as you develop this venture? (50 words maximum)',
+            label: 'What top three challenges do you think you will have as you try to develop this venture? (50 words maximum)',
             type: 'textarea',
             col: 12,
             options: {
                 type: 'text'
             },
         },
-        // {
-        //     name: 'idea_opportunities',
-        //     label: 'What top three opportunities do you think you will come across as you try to develop this new venture? (50 words maximum)',
-        //     type: 'textarea',
-        //     col: 12,
-        //     options: {
-        //         type: 'text'
-        //     },
-        // },
-        // {
-        //     name: 'idea_skills',
-        //     label: 'Please briefly explain the passions, strengths and skills you will bring to the program and why you wish to participate. (200 words maximum)',
-        //     type: 'textarea',
-        //     col: 12,
-        //     options: {
-        //         type: 'text'
-        //     },
-        // },
+        {
+            name: 'idea_opportunities',
+            label: 'What top three opportunities do you think you will come across as you try to develop this new venture? (50 words maximum)',
+            type: 'textarea',
+            col: 12,
+            options: {
+                type: 'text'
+            },
+        },
+        {
+            name: 'idea_skills',
+            label: 'Please briefly explain the passions, strengths and skills you will bring to the program and why you wish to participate. (200 words maximum)',
+            type: 'textarea',
+            col: 12,
+            options: {
+                type: 'text'
+            },
+        },
         {
             name: 'idea_website',
             label: 'Please provide your business website if you have any',

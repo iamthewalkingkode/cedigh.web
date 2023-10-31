@@ -17,7 +17,7 @@ $config = [
         'frwk' => '/home/cedighana/public_html/',
         'api' => 'https://ledapi.cedighana.org/',
         'root' => 'web/',
-        'v' => '31-08-2022-15-27',
+        'v' => '30-10-2023',
     ],
     'qa.cedighana.org' => [
         'p' => 0,
@@ -65,7 +65,8 @@ $page = empty($page) ? 'home' : $page;
 $__ = [];
 $sData = ['partners', 'services', 'teams', 'projects', 'contact', 'programmes'];
 foreach ($sData as $_) {
-    $__[$_] = json_decode(file_get_contents(__DATA__ . $_ . '.json'), 1);
+    require __DATA__ . $_ . '.php';
+    $__[$_] = $$_;
 }
 
 $v = $config['v'];

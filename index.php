@@ -17,18 +17,18 @@
     'image' => _WEB_ . 'img/favicon.png',
 ]);?>
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <link rel="shortcut icon" href="<?php echo _WEB_ . 'img/favicon.png'; ?>" type="image/x-icon">
-    <link rel="icon" href="<?php echo _WEB_ . 'img/favicon.png'; ?>" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo _WEB_ . 'img/favicon.png?v=' . $v; ?>" type="image/x-icon">
+    <link rel="icon" href="<?php echo _WEB_ . 'img/favicon.png?v=' . $v; ?>" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500,500i,700,700i,900" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/bootstrap.min.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/all.min.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/owl.carousel.min.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/light-box.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/tp-animation.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/style.css'; ?>" media="all">
-    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/responsive.css'; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/bootstrap.min.css?v=' . $v; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/all.min.css?v=' . $v; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/owl.carousel.min.css?v=' . $v; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/light-box.css?v=' . $v; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/tp-animation.css?v=' . $v; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/style.css?v=' . $v; ?>" media="all">
+    <link rel="stylesheet" href="<?php echo _WEB_ . 'css/responsive.css?v=' . $v; ?>" media="all">
     <link rel="stylesheet" href="<?php echo _WEB_ . 'css/custom.css?v=' . $v; ?>" media="all">
 
     <link rel="stylesheet" href="@sweetalert2/theme-borderless/borderless.css">
@@ -158,7 +158,11 @@ if (file_exists($template) == true) {
                 <div class="col-lg-5 col-md-12 col-sm-6 col-12">
                     <div class="wrap_footer_col our_address">
                         <h3 class="footer-title">Our Address</h3>
-                        <p class="head-title contact-address"><?php echo $__['contact']['address'][0]; ?></p>
+                        <p class="head-title contact-address">
+                            <?php echo $__['contact']['address'][0]; ?> <br />
+                            <?php echo $__['contact']['address'][1]; ?><br />
+                            <?php echo $__['contact']['address'][2]; ?>.
+                        </p>
                         <p class="contact_number head-title">
                             <i class="fas fa-phone"></i> <a href="tel: +233 20 520 2000" class="contac_number m-primary-color">  +233 20 520 2000 </a>
                         </p>
@@ -182,15 +186,15 @@ if (file_exists($template) == true) {
         const API = '<?php echo $config['api']; ?>';
         const __ = <?php echo json_encode($__, 1); ?>;
     </script>
-    <script src="<?php echo _WEB_ . 'js/jquery.min.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/owl.carousel.min.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/masonary.min.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/multipleFilterMasonry.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/noframework.waypoints.min.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/light-box.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/jquery.countTo.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/wow.min.js'; ?>"></script>
-    <script src="<?php echo _WEB_ . 'js/index.js'; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/jquery.min.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/owl.carousel.min.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/masonary.min.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/multipleFilterMasonry.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/noframework.waypoints.min.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/light-box.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/jquery.countTo.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/wow.min.js?v=' . $v; ?>"></script>
+    <script src="<?php echo _WEB_ . 'js/index.js?v=' . $v; ?>"></script>
     <!-- scripts -->
     <script src="<?php echo _WEB_ . 'js/axius.js?v=' . $v; ?>" type="text/javascript"></script>
     <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.json.js?v=' . $v; ?>" type="text/babel"></script>

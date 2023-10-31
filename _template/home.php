@@ -9,7 +9,7 @@ $slides = [
     <div class="owl-carousel r_slider" data-fade="true" data-nav="off">
         <?php foreach ($slides as $slide): ?>
         <div class="r_wrap_slider r_wrap_slider_3">
-            <div class="r_slider_img" style="background-image:url(<?php echo _WEB_ . 'img/slider/' . $slide[1] . '.jpg?v=' . $v; ?>)"></div>
+            <div class="r_slider_img" style="background-image:url(<?php echo _WEB_ . 'img/slider/' . $slide[1] . '.png?v=' . $v; ?>)"></div>
             <div class="r-slider-container">
                 <div class="r-slider-conten container">
                     <h1 class="slider-title tp_animate_when_visible bottom-t-top" data-speed="600">
@@ -45,7 +45,7 @@ $slides = [
     </div>
 </section>
 
-<section class="mobex-section our-mission m-secondary-bg">
+<section class="mobex-section our-mission bg-1 m-secondary-bg">
     <div class="container">
         <div class="row row_mission align-items-center">
             <div class="col-lg-9 col-md-12 col-12">
@@ -94,7 +94,7 @@ $slides = [
                         data-offest="75%" data-speed="300">
                         <div class="col-lg-3 col-md-3  col-12 col-aicon">
                             <span class="about_us_3_icon">
-                                <i class="fas fa-<?php echo $prj['icon']; ?>"></i>
+                                <i class="fas fa-<?php echo $prj['icon']; ?>" style="color: <?php echo $prj['color']; ?>;"></i>
                             </span>
                         </div>
                         <div class="col-lg-3 col-md-4  col-12 col-atitle">

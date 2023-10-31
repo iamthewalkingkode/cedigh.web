@@ -67,7 +67,7 @@
                             <h3>Address Info</h3>
                         </div>
                         <div class="wrap_contact_text">
-                            <p>CEDI GHANA <br> <?php echo $__['contact']['address'][0]; ?></p>
+                            <p>CEDI GHANA <br /> <?php foreach($__['contact']['address'] as $address) echo $address.' <br />'; ?></p>
                         </div>
                         <div class="head_contact">
                             <h3>Phone & Email</h3>

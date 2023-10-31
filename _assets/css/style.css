@@ -83,6 +83,10 @@ li {
     list-style: none;
 }
 
+ul {
+    padding-left: 15px;
+}
+
 p:not(last-child) {
     margin-bottom: 1.3em;
 }
@@ -581,11 +585,13 @@ ul.sub-menu .megamenu-list {
 .row-head-section .wrap_head_section {
     padding-bottom: 0;
 }
+
 .row-head-section {
     position: relative;
     padding-bottom: 30px;
     margin-bottom: 40px;
 }
+
 .row-head-section::before {
     content: "";
     position: absolute;
@@ -596,8 +602,8 @@ ul.sub-menu .megamenu-list {
 }
 
 .services-section .wrap_head_section {
-      text-align: left;
-   
+    text-align: left;
+
 }
 
 
@@ -764,7 +770,7 @@ passionate section
     background-blend-mode: difference;
 }
 
-.mobex-section.aboutus-section::before{
+.mobex-section.aboutus-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -798,7 +804,7 @@ passionate section
 
 .wrap_about_text {
     padding-right: 30px;
-    
+
 }
 
 .wrap_about_text h2 {
@@ -810,7 +816,7 @@ passionate section
     font-size: 16px;
     line-height: 29px;
     margin-bottom: 18px;
-    
+
 }
 
 .wrap_about_text p {
@@ -870,7 +876,7 @@ passionate section
 .whychooseus-section {
     padding-top: 115px;
     padding-bottom: 125px;
-    
+
 
 }
 
@@ -895,7 +901,7 @@ passionate section
 }
 
 .experience_content .tp-counter {
-       font-size: 100px;
+    font-size: 100px;
     display: inline-block;
     float: left;
     font-weight: 500;
@@ -909,7 +915,7 @@ passionate section
 }
 
 .experience_title {
-   display: block;
+    display: block;
     overflow: hidden;
     text-align: left;
     padding-left: 20px;
@@ -936,7 +942,7 @@ passionate section
 }
 
 .why_us_list li p {
- 
+
     overflow: hidden;
 }
 
@@ -987,7 +993,7 @@ passionate section
 }
 
 .wrap-tp-counter .tp-counter {
-     font-size: 72px;
+    font-size: 72px;
     line-height: 77px;
     color: #ff5e14;
 }
@@ -1241,9 +1247,9 @@ passionate section
 }
 
 .testmonail-text p {
-   
+
     line-height: 28px;
-   
+
 }
 
 .mobex-owl .owl-dots {
@@ -1280,14 +1286,14 @@ passionate section
 }
 
 .wrap_hnews {
-       text-align: center;
+    text-align: center;
     padding-bottom: 35px;
     margin-bottom: 47px;
     border-bottom: 1px solid #e4eaf7;
 }
 
 .wrap_hnews h2 {
-    
+
     text-transform: capitalize;
     margin-bottom: 0;
 }
@@ -1353,12 +1359,12 @@ passionate section
 
 
 .mblog-text {
-  background: #fff;
+    background: #fff;
     padding: 25px;
-    box-shadow: 0 2px 40px 0 hsla(0,0%,0%,0.06);
-    -webkit-box-shadow: 0 2px 40px 0 hsla(0,0%,0%,0.06);
-    -o-box-shadow: 0 2px 40px 0 hsla(0,0%,0%,0.06);
-    -ms-box-shadow: 0 2px 40px 0 hsla(0,0%,0%,0.06);
+    box-shadow: 0 2px 40px 0 hsla(0, 0%, 0%, 0.06);
+    -webkit-box-shadow: 0 2px 40px 0 hsla(0, 0%, 0%, 0.06);
+    -o-box-shadow: 0 2px 40px 0 hsla(0, 0%, 0%, 0.06);
+    -ms-box-shadow: 0 2px 40px 0 hsla(0, 0%, 0%, 0.06);
 }
 
 .mblog-text h2 a {
@@ -1366,7 +1372,7 @@ passionate section
 }
 
 .mblog-text h2 {
-    
+
     font-size: 24px;
 }
 
@@ -1375,14 +1381,14 @@ passionate section
 }
 
 .mblog-meta li {
-     display: inline-block;
+    display: inline-block;
     margin-right: 2px;
     color: hsla(0, 3%, 63%, 0.26);
 }
 
 .mblog-meta li a,
 .mblog-meta li span {
-        color: #838384;
+    color: #838384;
     margin-right: 6px;
     display: inline-block;
     font-size: 12px;
@@ -1509,7 +1515,7 @@ passionate section
 }
 
 .footer-title {
-       color: #fff;
+    color: #fff;
     font-size: 20px;
     margin-bottom: 21px;
     font-weight: 400;
@@ -1555,7 +1561,7 @@ passionate section
 
 .contact_email i {
     font-style: normal;
-/*    text-transform: capitalize;*/
+    /*    text-transform: capitalize;*/
     margin-left: 5px;
 }
 
@@ -1750,7 +1756,7 @@ passionate section
 }
 
 .wrap_intro h2 {
- color: #fff;
+    color: #fff;
     font-size: 62px;
     line-height: 64px;
     text-transform: capitalize;
@@ -1859,7 +1865,7 @@ passionate section
  */
 
 .mobex-section.about_us_2 {
-   z-index: 2;
+    z-index: 2;
 }
 
 .wrap_atitle h2 {
@@ -1876,6 +1882,7 @@ passionate section
     margin-top: 30px;
     position: relative;
 }
+
 .row_about_content::before {
     content: "";
     position: absolute;
@@ -1907,7 +1914,7 @@ passionate section
 
 
 .wabout_conent h3 {
-       color: #fff;
+    color: #fff;
     text-transform: unset;
     font-size: 24px;
     margin-top: 0;
@@ -1920,7 +1927,7 @@ passionate section
 }
 
 .ahead {
-     padding: 10px 25px 20px;
+    padding: 10px 25px 20px;
     background: #152d66;
 }
 
@@ -1965,7 +1972,7 @@ passionate section
 }
 
 .row_about_facts {
-      padding-top: 45px;
+    padding-top: 45px;
 }
 
 .wrap_facts.wrap-counter::before {
@@ -2001,9 +2008,10 @@ passionate section
 }
 
 .our-service-head .row-head-section {
-      padding-bottom: 40px;
+    padding-bottom: 40px;
     position: relative;
 }
+
 .our-service-head .row-head-section::before {
     content: "";
     position: absolute;
@@ -2014,7 +2022,7 @@ passionate section
 }
 
 .mobex-section.services-section-content {
-padding-top: 5px;
+    padding-top: 5px;
 }
 
 .heade-service,
@@ -2065,7 +2073,7 @@ padding-top: 5px;
 }
 
 .service_2_icon {
-        display: flex;
+    display: flex;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2138,7 +2146,7 @@ padding-top: 5px;
 }
 
 .service_btn {
-        height: 0;
+    height: 0;
     overflow: hidden;
     width: 115%;
     margin-left: -9px;
@@ -2150,14 +2158,16 @@ padding-top: 5px;
     bottom: 0;
     background: transparent;
 }
-.service_btn:hover{
+
+.service_btn:hover {
     color: #06163a;
 }
+
 .service_btn i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-   
+
 }
 
 .wrap_service_2:hover .servic_icon {
@@ -2171,15 +2181,25 @@ padding-top: 5px;
 }
 
 
+.bg-1 {
+    background-image: url(imgs/bg-1.jpg) !important;
+}
 
+.bg-2 {
+    background-image: url(imgs/bg-2.jpg) !important;
+}
+
+.bg-3 {
+    background-image: url(imgs/bg-3.jpg) !important;
+}
 
 
 /*
 17- our mission
- */
+*/
 
 .mobex-section.our-mission {
-  background-image: url(imgs/play_video.jpg);
+    /* background-image: url(imgs/play_video.jpg); */
     background-position: center center;
     background-size: cover;
     z-index: 9;
@@ -2189,7 +2209,7 @@ padding-top: 5px;
 }
 
 .mobex-section.our-mission::before {
-     content: "";
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -2201,14 +2221,16 @@ padding-top: 5px;
 }
 
 .wrap_mission h2 {
-       color: #fff;
+    color: #fff;
     margin-bottom: 0;
     font-size: 36px;
     line-height: 44px;
 }
+
 .wrap_mission_icon.explore_project {
     text-align: right;
 }
+
 .wrap_mission_icon.explore_project a {
     font-weight: 500;
     font-size: 14px;
@@ -2457,12 +2479,12 @@ padding-top: 5px;
 
 .head-cases-title h2 {
     margin-bottom: 0;
-    
+
 }
 
 .head_projects_text {
     padding-left: 30px;
-   
+
 }
 
 
@@ -2472,7 +2494,7 @@ padding-top: 5px;
 }
 
 .row.wrap_row_cases {
-       margin-top: 35px;
+    margin-top: 35px;
     padding-top: 31px;
     position: relative;
 }
@@ -2506,9 +2528,11 @@ padding-top: 5px;
     background: #06163a;
     color: #ff5e14;
 }
+
 .col-case-2 .case-container {
     padding: 0;
 }
+
 .col-case-2 .wrap_case {
     margin-bottom: 15px;
 }
@@ -2543,7 +2567,7 @@ padding-top: 5px;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-       display: flex;
+    display: flex;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2632,7 +2656,7 @@ padding-top: 5px;
 
 
 .row_partners ul {
-        display: flex;
+    display: flex;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2949,7 +2973,7 @@ padding-top: 5px;
 }
 
 .r_wrap_slider.r_wrap_slider_3 .slider-title {
-        font-weight: 500;
+    font-weight: 500;
     text-transform: unset;
     font-size: 72px;
     letter-spacing: -2.5px;
@@ -2997,7 +3021,7 @@ padding-top: 5px;
     -webkit-box-shadow: 0 6px 35px rgba(0, 0, 0, 0.07);
     -moz-box-shadow: 0 6px 35px rgba(0, 0, 0, 0.07);
     -ms-box-shadow: 0 6px 35px rgba(0, 0, 0, 0.07);
-    -o-box-shadow:0 6px 35px rgba(0, 0, 0, 0.07);
+    -o-box-shadow: 0 6px 35px rgba(0, 0, 0, 0.07);
     box-shadow: 0 6px 35px rgba(0, 0, 0, 0.07);
 }
 
@@ -3044,7 +3068,7 @@ padding-top: 5px;
 
 
 .private_service_content h4 {
-        margin-top: 0;
+    margin-top: 0;
     font-size: 18px;
     margin-bottom: 16px;
     font-weight: 500;
@@ -3076,7 +3100,7 @@ padding-top: 5px;
  */
 
 .mobex-section.about_us_3 {
-     padding: 0;
+    padding: 0;
     background: #fff;
     z-index: 2;
     box-shadow: 0 28px 35px rgba(2, 6, 32, 0.2);
@@ -3147,7 +3171,7 @@ padding-top: 5px;
 }
 
 .about_us_3_title {
-        margin-top: 0;
+    margin-top: 0;
     text-align: left;
     font-size: 24px;
     text-transform: capitalize;
@@ -3173,12 +3197,12 @@ padding-top: 5px;
     left: -10px;
     top: 0;
     bottom: 0;
-    border-left:1px solid hsla(0, 0%, 0%, 0.06);
+    border-left: 1px solid hsla(0, 0%, 0%, 0.06);
 }
 
 
 .wrap_about_counter::before {
-     content: "";
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -3201,7 +3225,7 @@ padding-top: 5px;
 }
 
 .wrap_about_counter .wrap-tp-counter .tp-counter {
-   
+
     font-size: 58px;
     line-height: 58px;
 }
@@ -3239,7 +3263,7 @@ padding-top: 5px;
 
     z-index: 2;
     background: #e4eaf7;
-    box-shadow:0px 15px 35px rgba(2, 6, 32, 0.2);
+    box-shadow: 0px 15px 35px rgba(2, 6, 32, 0.2);
 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%23cccccc' fill-opacity='0.3'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 }
@@ -3251,11 +3275,12 @@ padding-top: 5px;
 
 
 .services-section-3 .row-head-section {
-       padding-bottom: 35px;
+    padding-bottom: 35px;
     margin-bottom: 45px;
     position: relative;
 }
-.services-section-3 .row-head-section::before{
+
+.services-section-3 .row-head-section::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -3490,7 +3515,7 @@ padding-top: 5px;
 }
 
 .row_chfilter {
-       padding-bottom: 25px;
+    padding-bottom: 25px;
     margin-bottom: 36px;
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.11);
 }
@@ -3733,7 +3758,7 @@ padding-top: 5px;
     color: #ff5e14;
 }
 
-.blogs-section-2.bindex-3{
+.blogs-section-2.bindex-3 {
     box-shadow: 0 28px 35px rgba(2, 6, 32, 0.2);
 }
 
@@ -3842,7 +3867,7 @@ padding-top: 5px;
 }
 
 .about_us_4::before {
- content: "";
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -3902,7 +3927,7 @@ padding-top: 5px;
     z-index: 2;
     padding-top: 120px;
     background: #fff;
-   
+
 }
 
 .wrap_services_4 {
@@ -3933,7 +3958,7 @@ padding-top: 5px;
 }
 
 .wrap_services_4 .private_service_content h4 {
-      color: #06163a;
+    color: #06163a;
     font-size: 24px;
     text-transform: capitalize;
     font-weight: 400;
@@ -4070,23 +4095,26 @@ padding-top: 5px;
 
 
 
-.mobex-section.our-team-2 .wrap_head_section  h2 {
+.mobex-section.our-team-2 .wrap_head_section h2 {
     color: #fff;
     margin-bottom: 0;
 }
-.mobex-section.our-team-2 .row-head-section  p{
+
+.mobex-section.our-team-2 .row-head-section p {
     color: #c3c9d8;
 }
-.mobex-section.our-team-2 .row-head-section::before{
+
+.mobex-section.our-team-2 .row-head-section::before {
     border-bottom-color: hsla(0, 0%, 100%, 0.11);
 }
+
 /*
 
 38- breadcrumbas layout 2
  */
 
 .r-breadcurmbs-2 {
-    background-image: url(imgs/facts.jpg);
+    background-image: url(imgs/bg-2.jpg);
     background-size: cover;
     background-position: center;
     padding: 100px 0;
@@ -4144,7 +4172,7 @@ padding-top: 5px;
 }
 
 .tabs li a h4 {
- font-size: 16px;
+    font-size: 16px;
     text-transform: uppercase;
     display: inline-block;
     padding: 20px;
@@ -4205,7 +4233,7 @@ featues layout 2
 }
 
 .wrap_aboutf_text h3 {
-   font-size: 16px;
+    font-size: 16px;
     text-transform: uppercase;
     margin-top: 26px;
     font-weight: 500;
@@ -4278,11 +4306,13 @@ process section layout 2
     color: #fff;
     margin-bottom: 0;
 }
+
 .mobex-process .row-head-section p {
     color: #adb7ce;
 }
-.mobex-process .row-head-section::before{
-    border-bottom-color: hsla(0,0%,100%,0.1);
+
+.mobex-process .row-head-section::before {
+    border-bottom-color: hsla(0, 0%, 100%, 0.1);
 }
 
 .row.row_process_2 {
@@ -4381,7 +4411,7 @@ process section layout 2
 }
 
 .head_widget h3 {
-       margin-top: 0;
+    margin-top: 0;
     padding-bottom: 25px;
     margin-bottom: 0;
     font-size: 18px;
