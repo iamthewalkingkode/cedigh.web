@@ -17,7 +17,7 @@ $config = [
         'frwk' => '/home/cedighana/public_html/',
         'api' => 'https://ledapi.cedighana.org/',
         'root' => 'web/',
-        'v' => '30-10-2023',
+        'v' => '01-11-2023',
     ],
     'qa.cedighana.org' => [
         'p' => 0,

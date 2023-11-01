@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="wrap_breadcrumbs_1">
-                    <h1 class="breadcurmbs-head">Our Company
-                    </h1>
+                    <h1 class="breadcurmbs-head">Our Company</h1>
                     <ul class="breadcrumbs_content_1">
                         <li><a href="<?php echo WEB; ?>" title="home"> Home </a> /</li>
                         <li><span>About Us</span></li>
@@ -116,8 +115,8 @@ We seek a country wherein all citizens have the capabilities to grasp the ever -
         <div class="row align-items-center">
             <div class="col-lg-9 col-md-12 col-12 col-about-text">
                 <div class="wrap_about_text">
-                    <h2 class="m-title tp_animate_when_visible fade-bottom" data-offest="85%" data-speed="500">Television Africa Interview</h2>
-                    <p class="tp_animate_when_visible fade-bottom" data-offest="80%" data-delay="600" data-speed="600">Our Executive Director, Prof. Lawrence Lowell and our CEO, Mr. Kingsley Kwaku Pinkrah on Television Africa</p>
+                    <h2 class="m-title tp_animate_when_visible fade-bottom" data-offest="85%" data-speed="500">Ghana Broadcasting Corporation Interview</h2>
+                    <p class="tp_animate_when_visible fade-bottom" data-offest="80%" data-delay="600" data-speed="600">1st Annual International Conference on Innovation and Entrepreneurship (E-Jobs4All Summit)</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-12 col-12 col-about-carousel">
@@ -144,10 +143,10 @@ We seek a country wherein all citizens have the capabilities to grasp the ever -
                     <div class="col-lg-6 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom">
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/G05kfTObmw8?si=ePl3SACwIoUXaMkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom mt-4">
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/6RhshenMvmU?si=ePl3SACwIoUXaMkw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom" data-offest="80%" data-speed="600">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 tp_animate_when_visible fade-bottom mt-4" data-offest="80%" data-speed="600">
                         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Fcedigha%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1882831155374670" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
                     

@@ -137,9 +137,9 @@ if (file_exists($template) == true) {
                         Community and Entrepreneurial Development Initiative commonly called CEDI Ghana is a registered company limited by guarantee incorporated under Ghana’s Company Act, 1963 (Act 179)...
                         </p>
                         <ul class="footer_sicons">
-                            <li><a target="_blank" href="https://www.facebook.com/cedigha/" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a target="_blank" href="https://www.twitter.com/cedi_ghana/" title="twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li><a target="_blank" href="https://www.linkedin.com/in/cedighana/" title="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/cedigha" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://www.twitter.com/cedi_ghana" title="twitter"><i class="fab fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/cedighana" title="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -199,6 +199,7 @@ if (file_exists($template) == true) {
     <script src="<?php echo _WEB_ . 'js/axius.js?v=' . $v; ?>" type="text/javascript"></script>
     <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.json.js?v=' . $v; ?>" type="text/babel"></script>
     <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/theme.js?v=' . $v; ?>" type="text/babel"></script>
+    <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.pay.js?v=' . $v; ?>" type="text/babel"></script>
     <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/form.other.js?v=' . $v; ?>" type="text/babel"></script>
     <script src="<?php echo _WEB_ . 'js/e-jobs-4-all/app.js?v=' . $v; ?>" type="text/babel"></script>
 </body>

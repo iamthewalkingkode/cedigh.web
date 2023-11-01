@@ -1,3 +1,4 @@
+const token = `AkjlXKndJ3fljxC1Fg9kldfgRU5ZNVsm`;
 const axius = {
     get: async (request, payload) => {
         try {
@@ -12,13 +13,12 @@ const axius = {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
-                    Authorization: 'AkjlXKndJ3fljxC1Fg9kldfgRU5ZNVsm',
+                    Authorization: token,
                 },
             });
-            let responseJson = await response.json();
-            return responseJson;
+            return await response.json();
         } catch (error) {
-            return { status: 606, result: 'Network request failed', error };
+            return { status: 606, result: `Network request failed`, error };
         }
     },
     post: async (request, payload) => {
@@ -28,12 +28,11 @@ const axius = {
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
-                    Authorization: 'AkjlXKndJ3fljxC1Fg9kldfgRU5ZNVsm',
+                    Authorization: token,
                 },
                 body: JSON.stringify(payload),
             });
-            let responseJson = await response.json();
-            return responseJson;
+            return await response.json();
         } catch (error) {
             return { status: 606, result: 'Network request failed', error };
         }

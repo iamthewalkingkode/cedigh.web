@@ -34,7 +34,8 @@ $programmes = [
                 <li>• December 15 - 22, 2023 | Notification of Selected Applicants </li>
             </ul>
             <br>
-            <a href=\"./e-jobs-4-all\" class=\"btn btn-sm btn-dark\">Apply Now</a>
+            <a href=\"./e-jobs-4-all\" class=\"btn btn-sm btn-dark\">Apply Now</a> &nbsp;
+            <a href=\"./e-jobs-4-all-payment\" target=\"_blank\" class=\"btn btn-sm btn-dark\">Make Payment</a>
         </div>"
     ],
     [

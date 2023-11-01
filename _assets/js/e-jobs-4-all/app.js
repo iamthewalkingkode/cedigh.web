@@ -2,8 +2,8 @@ $(document).ready(function () {
   const { ThemeProvider, FormControl, TextField, Select, MenuItem, InputLabel, Button, Alert, Stepper, Step, StepLabel, Box, Checkbox, FormControlLabel, FormHelperText, } = MaterialUI;
 
   const App = () => {
-    const [v, setValues] = React.useState({ first_name: '', last_name: '', middle_name: '' });
-    const [step, setStep] = React.useState(0);
+    const [v, setValues] = React.useState({ token: '', first_name: '', last_name: '', middle_name: '' });
+    const [step, setStep] = React.useState(1);
     const [other, setOther] = React.useState('');
     const [error, setError] = React.useState([]);
     const [alert, setAlert] = React.useState({ msg: '', color: '' });
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     React.useEffect(() => {
       console.log(EJobs_Form_Json.flat().filter(ff => !['intro'].includes(ff.name)).map(ff => {
-        return ff.name
+        return ff.name;
       }));
     }, []);
 
@@ -72,14 +72,32 @@ $(document).ready(function () {
 
     const goBack = () => {
       setStep((preStep) => preStep - 1);
+      window.scrollTo({ top: document.getElementById(`Header`)?.offsetHeight, behavior: 'smooth' });
     };
+
+    const validateToken = () => {
+      setAlert((e) => ({ ...e, msg: '' }));
+      setSubmitting(true);
+      axius.post('e_applicants', { case: 'token', genesis: 'e_applicants', ...v, }).then((res) => {
+        setSubmitting(false);
+        if (res.status === 200) {
+          setStep((preStep) => preStep + 1);
+        } else {
+          swal.error('Invalid / Used payment token');
+          setAlert({ msg: 'Invalid / Used payment token', color: 'error' });
+        }
+        window.scrollTo({ top: document.getElementById('Header')?.offsetHeight, behavior: 'smooth' });
+      });
+    }
 
     const goNext = () => {
       const isValid = validate();
       setError(isValid);
       if (isValid.length === 0) {
-        if (step === 4) {
+        if (step === 5) {
           submit();
+        } else if (step === 1) {
+          validateToken();
         } else {
           setStep((preStep) => preStep + 1);
         }
@@ -87,7 +105,7 @@ $(document).ready(function () {
       window.scrollTo({ top: document.getElementById(`Header`)?.offsetHeight, behavior: 'smooth' });
     };
 
-    const steps = ['Application details', 'Applicant Information', 'Info about Academic Institution', 'Info about idea', 'Thank You'];
+    const steps = ['Application Details', 'Payment Details', 'Applicant Information', 'Info about Academic Institution', 'Info About Idea', 'Thank You'];
 
     return (
       <React.Fragment>
@@ -113,13 +131,13 @@ $(document).ready(function () {
 
               <div className="my-5">
                 <div className="row">
-                  {EJobs_Form_Json[step].map(input => {
-                    return (
-                      <div key={input.name} id={`input_${input.name}`} className={`col-12 col-lg-${input.col || 6} mb-4`}>
-                        {input.type !== 'break' && (<InputLabel className="mb-2 no-break">{input.label}</InputLabel>)}
-                        {input.type === 'break' && (<div dangerouslySetInnerHTML={{ __html: input.label }} />)}
-                        <FormControl fullWidth error={error.includes(input.name)}>
-                          {input.type === 'input' && (
+                  {EJobs_Form_Json[step].map(input => (
+                    <div key={input.name} id={`input_${input.name}`} className={`col-12 col-lg-${input.col || 6} mb-4`}>
+                      {input.type !== 'break' && (<InputLabel className="mb-2 no-break">{input.label}</InputLabel>)}
+                      {input.type === 'break' && (<div dangerouslySetInnerHTML={{ __html: input.label }} />)}
+                      <FormControl fullWidth error={error.includes(input.name)}>
+                        {input.type === 'input' && (
+                          <>
                             <TextField
                               required={input.required}
                               id={input.name}
@@ -133,61 +151,68 @@ $(document).ready(function () {
                               disabled={submitting}
                               helperText={error.includes(input.name) && 'This field is required'}
                             />
-                          )}
-                          {input.type === 'textarea' && (
-                            <TextField
+                            {input.help && (<div><i className="fa fa-exclamation-circle text-info" /> <span dangerouslySetInnerHTML={{ __html: input.help }} /> </div>)}
+                          </>
+                        )}
+                        {input.type === 'textarea' && (
+                          <TextField
+                            required={input.required}
+                            id={input.name}
+                            error={error.includes(input.name)}
+                            placeholder={input.label}
+                            name={input.name}
+                            value={v[input.name] || ''}
+                            multiline rows={5} maxLength={2}
+                            onChange={changeValue}
+                            className="zws"
+                            disabled={submitting}
+                            helperText={error.includes(input.name) && 'This field is required'}
+                          />
+                        )}
+                        {input.type === 'select' && (
+                          <>
+                            {/* <InputLabel>{input.label}</InputLabel> */}
+                            <Select
                               required={input.required}
                               id={input.name}
-                              error={error.includes(input.name)}
-                              placeholder={input.label}
                               name={input.name}
-                              value={v[input.name] || ''}
-                              multiline rows={5} maxLength={2}
+                              error={error.includes(input.name)}
+                              value={v[input.name] || 'no'}
                               onChange={changeValue}
-                              className="zws"
                               disabled={submitting}
-                              helperText={error.includes(input.name) && 'This field is required'}
-                            />
-                          )}
-                          {input.type === 'select' && (
-                            <>
-                              {/* <InputLabel>{input.label}</InputLabel> */}
-                              <Select
-                                required={input.required}
-                                id={input.name}
-                                name={input.name}
-                                error={error.includes(input.name)}
-                                value={v[input.name] || ''}
-                                onChange={changeValue}
-                                disabled={submitting}
-                                className="zws"
-                              >
-                                {input.options.items.map((option) => (
-                                  <MenuItem key={`${input.name}-${option}`} value={option}>
-                                    {option}
-                                  </MenuItem>
-                                ))}
-                              </Select>
-                              {error.includes(input.name) && (
-                                <FormHelperText>This field is required</FormHelperText>
-                              )}
-                            </>
-                          )}
-                          {input.type === 'checkbox' && (
-                            <>
-                              <div className="ml-4s">
-                                {input.options.items.map((option) => (
-                                  <div className="float-left mr-2" key={option}>
-                                    <FormControlLabel control={<Checkbox value={option} name={input.name} disabled={submitting} onChange={e => changeValue(e, true)} />} label={option} />
-                                  </div>
-                                ))}
-                              </div>
-                            </>
-                          )}
-                        </FormControl>
-                      </div>
-                    )
-                  })}
+                              className="zws"
+                            >
+                              <MenuItem value="no" disabled>
+                                Choose an option
+                              </MenuItem>
+                              {input.options.items.map((option) => (
+                                <MenuItem key={`${input.name}-${option}`} value={option}>
+                                  {option}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                            {error.includes(input.name) && (
+                              <FormHelperText>This field is required</FormHelperText>
+                            )}
+                          </>
+                        )}
+                        {input.type === 'checkbox' && (
+                          <>
+                            <div className="ml-4s">
+                              {input.options.items.map((option) => (
+                                <div className="float-left mr-2" key={option}>
+                                  <FormControlLabel
+                                    control={<Checkbox value={option} name={input.name} disabled={submitting} onChange={e => changeValue(e, true)} />}
+                                    label={option}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </>
+                        )}
+                      </FormControl>
+                    </div>
+                  ))}
 
                   {step === 4 && (
                     <div className="pl-3">
@@ -202,7 +227,7 @@ $(document).ready(function () {
 
               <Box sx={{ display: 'flex', flexDirection: 'row', pt: 1 }}>
                 <Button color="inherit" variant="contained" disabled={step === 0 || submitting} onClick={goBack} sx={{ mr: 1 }}>
-                  Back
+                  &nbsp; &nbsp; &nbsp; Back &nbsp; &nbsp; &nbsp;
                 </Button>
                 <Box sx={{ flex: '1 1 auto' }} />
                 <Button variant="contained" disabled={submitting} onClick={goNext}>

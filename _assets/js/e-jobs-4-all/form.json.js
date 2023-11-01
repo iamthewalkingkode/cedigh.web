@@ -7,15 +7,29 @@ const EJobs_Form_Json = [
             <h6 class="mt-3"><i>Program Dates:</i></h6>
             <div><b>Applications are due November 30, 2023, 11:59PM GMT.</b></div>
 
-            <div><b>Course 1 - Explore Entrepreneurship</b> January 2023 - March 2023</div>
-            <div><b>Course 2 - Ignite Entrepreneurship</b> April 2023 - June 2023</div>
-            <div><b>Course 3 - Launch Entrepreneurship</b> July 2023 - September 2023</div>
+            <div><b>Course 1 - Explore Entrepreneurship</b> January 2023 - March 2024</div>
+            <div><b>Course 2 - Ignite Entrepreneurship</b> April 2023 - June 2024</div>
+            <div><b>Course 3 - Launch Entrepreneurship</b> July 2023 - September 2024</div>
             <p>&nbsp;</p>
 
             <div>${__['programmes'][0][2].replace('<a href=\"./e-jobs-4-all\" class=\"btn btn-sm btn-dark\">Apply Now</a>', '')}</div>
             `,
             type: 'break',
             col: 12,
+        },
+    ],
+
+    [
+        {
+            name: 'token',
+            label: 'Payment Token',
+            type: 'input',
+            col: 12,
+            options: {
+                type: 'text'
+            },
+            required: true,
+            help: `To obtain a valid token, please go to <a href="./e-jobs-4-all-payment" target="_blank">[Payment Page]</a>. After making payment, you will receive an SMS with a payment token to proceed with your application.`,
         },
     ],
 
@@ -66,7 +80,7 @@ const EJobs_Form_Json = [
                 type: 'number'
             },
             required: true,
-        },        
+        },
         {
             name: 'gender',
             label: 'Please select the gender that you identify with',
@@ -351,4 +365,39 @@ const EJobs_Form_Json = [
         // { name: 'first_name', label: 'First', type: 'textarea', options: { type: 'text' }, },
         // { name: 'first_name', label: 'First', type: 'textarea', options: { type: 'text' }, },
     ]
+];
+
+const EJobs_Form_JsonPay = [
+    {
+        name: 'network',
+        label: 'Choose network',
+        type: 'select',
+        options: {
+            items: ['MTN', 'VOD', 'ATM'],
+            items: [
+                { value: 'MTN', label: 'MTN Mobile Money' },
+                { value: 'VOD', label: 'Vodafone Cash' },
+                { value: 'ATM', label: 'AT Money' },
+            ],
+        },
+        required: true,
+    },
+    {
+        name: 'accountName',
+        label: 'Your full name',
+        type: 'input',
+        options: {
+            type: 'text'
+        },
+        required: true,
+    },
+    {
+        name: 'accountNumber',
+        label: 'Phone number',
+        type: 'input',
+        options: {
+            type: 'number'
+        },
+        required: true,
+    },
 ];

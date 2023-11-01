@@ -1,4 +1,4 @@
-(function($, window, document) {
+(function ($, window, document) {
 
     "use strict"; // a stric mode 
 
@@ -10,11 +10,11 @@
     var tp_obj = {
 
 
-        tp_smooth_animation: function() {
+        tp_smooth_animation: function () {
 
             var elment_to_animate = $('body').find('.tp_animate_when_visible');
 
-            $.each(elment_to_animate, function(index, el) {
+            $.each(elment_to_animate, function (index, el) {
 
                 var $delay = $(el).data('delay');
                 $delay = parseInt($delay, 10);
@@ -36,12 +36,12 @@
 
 
 
-                        setTimeout(function() {
+                        setTimeout(function () {
 
 
                             var waypoint = new Waypoint({
                                 element: el,
-                                handler: function(direction) {
+                                handler: function (direction) {
                                     $(el).addClass('start_animation');
                                 },
                                 offset: offest
@@ -53,7 +53,7 @@
 
                         var waypoint = new Waypoint({
                             element: el,
-                            handler: function(direction) {
+                            handler: function (direction) {
                                 $(el).addClass('start_animation');
                             },
                             offset: offest
@@ -70,16 +70,10 @@
             });
 
         },
-        owl_slider: function() {
-
-
+        owl_slider: function () {
             var $slider = $('body').find('.r_slider');
-
-
-
-
             var $data = '';
-            $slider.on('prepare.owl.carousel', function(event) {
+            $slider.on('prepare.owl.carousel', function (event) {
 
                 event.data = $('<' + event.relatedTarget.settings.itemElement + '/>').addClass(event.relatedTarget.options.itemClass).attr('data-index', event.item.count).append(event.content);
 
@@ -90,20 +84,20 @@
 
             });
 
-            $slider.on('translated.owl.carousel', function(event) {
+            $slider.on('translated.owl.carousel', function (event) {
 
 
                 var currentItem = $(event.currentTarget).find("> .owl-stage-outer > .owl-stage > .owl-item")[event.item.index],
                     currentIndex = $(currentItem).attr('data-index');
 
-                $.each($('.owl-item.active .tp_animate_when_visible', $(event.currentTarget)), function(index, val) {
+                $.each($('.owl-item.active .tp_animate_when_visible', $(event.currentTarget)), function (index, val) {
                     var $delay = $(val).data('delay');
 
                     if (typeof $(val).data('delay') !== 'undefined') {
                         if ($(event.currentTarget).hasClass('owl-mouseenter')) {
                             $delay = 0;
                         }
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $(val).addClass('start_animation');
                         }, $delay);
                     } else {
@@ -113,7 +107,7 @@
 
 
                 });
-                $.each($('.owl-item:not(.active) .tp_animate_when_visible', $(event.currentTarget)), function(index, val) {
+                $.each($('.owl-item:not(.active) .tp_animate_when_visible', $(event.currentTarget)), function (index, val) {
 
                     if ($(val).closest('.r_slider').length) {
                         $(val).removeClass('start_animation');
@@ -188,7 +182,7 @@
 
 
 
-            $(window).on('load', function() {
+            $(window).on('load', function () {
                 /*  var $elCarousel = $main_slider.data('owl.carousel');
 
                   if (typeof $elCarousel !== 'undefined') {
@@ -213,7 +207,7 @@
 
             });
 
-            $slider.on('changed.owl.carousel', function(event) {
+            $slider.on('changed.owl.carousel', function (event) {
 
 
 
@@ -254,7 +248,7 @@
 
         },
 
-        sticky_header: function(lengthHeader) {
+        sticky_header: function (lengthHeader) {
             var header = $('body').find('.tp-main-menu');
             if (header.hasClass("sticky-header")) {
 
@@ -275,11 +269,11 @@
             }
         },
 
-        sticky_section: function() {
+        sticky_section: function () {
 
             var sticky_section = $('body').find('.tp-full-fixed');
 
-            $.each(sticky_section, function(index, el) {
+            $.each(sticky_section, function (index, el) {
 
                 var elment_height = $(el).height();
                 var scroll_height = $(window).scrollTop();
@@ -289,7 +283,7 @@
 
                 var waypoint = new Waypoint({
                     element: el,
-                    handler: function(direction) {
+                    handler: function (direction) {
 
                         if (scroll_height >= (elment_height) + 400) {
                             $(el).css('position', 'static');
@@ -308,10 +302,10 @@
 
 
         // Portfolio Carousel Layout 2
-        mobex_owl: function() {
+        mobex_owl: function () {
             var powl = $('body').find('.mobex-owl');
             if (powl.length) {
-                powl.each(function() {
+                powl.each(function () {
                     var _powl = $(this);
                     var to_show, dots, nav, loop, center;
                     to_show = _powl.data('show');
@@ -376,7 +370,7 @@
 
 
 
-        tp_ajax: function(data) {
+        tp_ajax: function (data) {
             return $.ajax({
                 type: "POST",
                 url: "php/contact-form.php",
@@ -386,9 +380,9 @@
 
         // Responsive Main Menu
 
-        phone_menu: function() {
+        phone_menu: function () {
             // phone menu ==========
-            $(".tp-main-menu ").on("click", ".phone_menu", function(e) {
+            $(".tp-main-menu ").on("click", ".phone_menu", function (e) {
 
                 var item = $(this);
 
@@ -416,7 +410,7 @@
 
             });
 
-            $(document).on("click", "body", function(e) {
+            $(document).on("click", "body", function (e) {
                 var $_this = $(this);
 
                 if ($(e.target).parents(".tp-menu").length === 1 || $(e.target).parents(".tagpoint-wrap-logo").length === 1 || $(e.target).parents(".tp-main-menu").length === 1) {
@@ -437,7 +431,7 @@
 
             //phone dropdown 
 
-            $(".tp-main-menu").on("click", ".tp_phone_dropdown", function(e) {
+            $(".tp-main-menu").on("click", ".tp_phone_dropdown", function (e) {
 
 
                 var _this = $(this);
@@ -455,16 +449,16 @@
 
         },
         // Skills Progress Bas
-        tp_progressbar: function() {
+        tp_progressbar: function () {
             // progress bar  =============
             var progress_bar = $('body').find('.tagpoint_progress_bar');
 
-            $.each(progress_bar, function(index, el) {
+            $.each(progress_bar, function (index, el) {
                 var item = $(this);
 
                 var waypoint = new Waypoint({
                     element: el,
-                    handler: function(direction) {
+                    handler: function (direction) {
 
                         var idprogress = item.attr('id');
                         var type = item.attr('data-type');
@@ -527,7 +521,7 @@
                         };
 
                         if (type === 'line') {
-                            object_progressbar.step = function(state, bar) {
+                            object_progressbar.step = function (state, bar) {
                                 bar.setText(Math.round(bar.value() * 100) + ' <i>%<i>');
                                 //   bar.text.style.color = '#fff';
                                 //  bar.text.style.left = Math.round(bar.value() * 100) + '%'; 
@@ -537,7 +531,7 @@
                         } else if (type === 'circle') {
 
                             // Set default step function for all animate calls
-                            object_progressbar.step = function(state, circle) {
+                            object_progressbar.step = function (state, circle) {
                                 circle.path.setAttribute('stroke', state.color);
                                 circle.path.setAttribute('stroke-width', stockwidth);
 
@@ -551,7 +545,7 @@
 
                             }
                         } else if (type === 'semicircle') {
-                            object_progressbar.step = function(state, bar) {
+                            object_progressbar.step = function (state, bar) {
                                 bar.path.setAttribute('stroke', state.color);
                                 var value = Math.round(bar.value() * 100);
                                 if (value === 0) {
@@ -596,10 +590,10 @@
         },
 
 
-        page_slider: function() {
+        page_slider: function () {
             var $pageslider = $('body').find('.single_page_slider');
             if ($pageslider.length) {
-                $.each($pageslider, function(index, el) {
+                $.each($pageslider, function (index, el) {
                     var items = $(el).data('items');
                     var dots = $(el).data('dots');
                     var arrow = $(el).data('arrow');
@@ -627,11 +621,11 @@
 
         },
 
-        tp_tabs: function() {
+        tp_tabs: function () {
 
             $('body').find('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
 
-            $(document).on('click', '.tab ul.tabs li a', function(e) {
+            $(document).on('click', '.tab ul.tabs li a', function (e) {
                 var tab = $(this).closest('.tab'),
                     index = $(this).closest('li').index();
 
@@ -647,7 +641,7 @@
         },
 
 
-        projects_masonary: function() {
+        projects_masonary: function () {
 
             var case_grid = $('body').find('.r-projects');
             if (case_grid.length) {
@@ -672,13 +666,13 @@
 
     // Dom Ready Function
     // 
-     var msnry;
+    var msnry;
 
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
-        
 
-        (function($) {
+
+        (function ($) {
 
 
             tp_obj.owl_slider();
@@ -692,11 +686,11 @@
 
 
             /* blogs grid masonary  */
-           
+
             var blogs_masonry = $('body').find('.blogs-grid');
             if (blogs_masonry.length) {
 
-                 msnry = new Masonry('.blogs-grid', {
+                msnry = new Masonry('.blogs-grid', {
                     percentPosition: true,
                     columnWidth: '.grid-sizer',
 
@@ -737,7 +731,7 @@
 
 
             var item = jQuery("body").find(".tp-counter");
-            item.each(function(index, el) {
+            item.each(function (index, el) {
 
                 var _this = jQuery(this);
 
@@ -746,7 +740,7 @@
 
                 var waypoint = new Waypoint({
                     element: item,
-                    handler: function(direction) {
+                    handler: function (direction) {
                         _this.countTo();
                         waypoint.destroy();
 
@@ -762,7 +756,7 @@
 
             // ajax contact form
 
-            $("body").on("submit", "#tp-form", function(event) {
+            $("body").on("submit", "#tp-form", function (event) {
                 // cancels the form submission
                 event.preventDefault();
                 var form = $(this);
@@ -770,7 +764,7 @@
 
 
                 var validated = true;
-                form.find("input[required=true],textarea[required=true]").each(function() {
+                form.find("input[required=true],textarea[required=true]").each(function () {
 
                     if (!jQuery.trim(jQuery(this).val())) { //if this field is empty
                         jQuery(this).css("border-color", "red"); //change border color to red  
@@ -787,7 +781,7 @@
                 if (validated) {
 
 
-                    tp_obj.tp_ajax(data).done(function(text) {
+                    tp_obj.tp_ajax(data).done(function (text) {
                         form.find(".tpsend-btn").after("<p class='msg_feadback'> " + text + "</p> ");
                     });
 
@@ -806,13 +800,13 @@
     var lengthHeader = $('.tp-menu').offset().top;
 
 
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
 
         tp_obj.sticky_header(lengthHeader);
         tp_obj.sticky_section();
-        if(typeof msnry !=='undefined'){
-         
-             msnry.layout(); 
+        if (typeof msnry !== 'undefined') {
+
+            msnry.layout();
         }
 
     });
@@ -822,7 +816,7 @@
 
     /* perload fuction */
 
-    $(window).on("load", function() {
+    $(window).on("load", function () {
         var $m_slider = $('.r_slider');
         $m_slider.trigger('to.owl.carousel', [0]);
         tp_obj.owl_slider();
@@ -834,7 +828,7 @@
 
 
 
-            $('.owl-item.active .tp_animate_when_visible').each(function(index, val) {
+            $('.owl-item.active .tp_animate_when_visible').each(function (index, val) {
 
 
                 var $delay = $(this).data('delay');
@@ -843,7 +837,7 @@
 
                 if (typeof $(val).data('delay') !== 'undefined') {
 
-                    setTimeout(function() {
+                    setTimeout(function () {
 
                         $(val).addClass('start_animation');
                     }, $delay);
